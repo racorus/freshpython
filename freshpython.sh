@@ -35,8 +35,10 @@ show_menu() {
     echo "8) TensorFlow"
     echo "9) PyTorch"
     echo "10) Jupyter"
-    echo "11) All of the above"
-    echo "12) Exit"
+    echo "11) uvicorn"
+    echo "12) joblib"
+    echo "13) All of the above"
+    echo "14) Exit"
     read -p "Enter your choices (e.g., 1 2 3): " choices
 }
 
@@ -75,10 +77,16 @@ install_packages() {
                 packages+=" jupyter"
                 ;;
             11)
-                packages+=" fastapi pandas scikit-learn numpy scipy matplotlib seaborn tensorflow torch jupyter"
-                break
+                packages+=" uvicorn"
                 ;;
             12)
+                packages+=" joblib"
+                ;;
+            13)
+                packages+=" fastapi pandas scikit-learn numpy scipy matplotlib seaborn tensorflow torch jupyter uvicorn joblib"
+                break
+                ;;
+            14)
                 echo "Exiting."
                 exit 0
                 ;;
